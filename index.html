@@ -1,0 +1,93 @@
+<div class="app">
+  <header>
+    <h1>Charles’s Law Simulation</h1>
+    <p>Observe how gas volume changes with temperature at constant pressure.</p>
+  </header>
+
+  <main class="main-grid">
+    <!-- Simulation Area -->
+    <section class="simulation-card">
+      <div class="top-bar">
+        <div class="preset-buttons">
+          <button class="preset" data-temp="150">Cold</button>
+          <button class="preset" data-temp="300">Room Temp</button>
+          <button class="preset" data-temp="500">Hot</button>
+        </div>
+
+        <button id="soundBtn">🔊 Sound</button>
+      </div>
+
+      <div class="simulation-area">
+        <div id="container">
+          <canvas id="particleCanvas"></canvas>
+        </div>
+      </div>
+
+      <div class="readings">
+        <div class="reading">
+          <h3>Temperature</h3>
+          <span id="tempValue">300 K</span>
+        </div>
+
+        <div class="reading">
+          <h3>Volume</h3>
+          <span id="volumeValue">3.00 L</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label for="tempSlider">Temperature</label>
+        <input type="range" id="tempSlider" min="100" max="600" value="300" />
+
+        <div class="button-group">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Panel -->
+    <section class="info-card">
+      <h2>Charles’s Law</h2>
+
+      <div class="formula">
+        V₁ / T₁ = V₂ / T₂
+      </div>
+
+      <p>
+        Charles’s Law states that the volume of a gas is directly proportional
+        to its temperature when pressure is constant.
+      </p>
+
+      <ul>
+        <li>Higher temperature → faster particles</li>
+        <li>Faster particles → larger volume</li>
+        <li>Pressure remains constant</li>
+      </ul>
+
+      <canvas id="graphCanvas"></canvas>
+    </section>
+  </main>
+
+  <!-- Quiz Popup -->
+  <div class="quiz-popup" id="quizPopup">
+    <div class="quiz-content">
+      <h2>Quick Quiz</h2>
+      <p>
+        What happens to gas volume when temperature increases at constant
+        pressure?
+      </p>
+
+      <button class="quiz-answer correct">
+        Volume increases
+      </button>
+
+      <button class="quiz-answer wrong">
+        Volume decreases
+      </button>
+
+      <button id="closeQuiz">Close</button>
+    </div>
+  </div>
+</div>
